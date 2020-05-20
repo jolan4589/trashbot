@@ -4,6 +4,11 @@
 
 ## Remember fill root/srcs/json/bot.js file with your own bot token.
 
-# Implemented :
 
-- None
+# Implemented :
+### /!\ Every commands used pefix, (% default) /!\
+
+## Roles commands
+### add r to default prefix (exemple : %rlit)
+- list	:	Send in current channel the current list of roles.
+- send $Role$ text	:	Send text to every peoples with specified role, support multiple roles.

@@ -2,7 +2,7 @@
 
 # Trash bot
 
-## Remember fill botlogin.json root file with your own bot login.
+## Remember fill root/srcs/json/bot.js file with your own bot token.
 
 # Implemented :
 

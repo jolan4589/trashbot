@@ -26,6 +26,39 @@ exports.test = function (msg) {
 
 exports.save = function(content, file) {
 	const files = {
-		bot: "b"
+		bot: `${ROOT}/srcs/bot.json`,
+		embed: `${ROOT}/srcs/embed.json`,
+		test: `${ROOT}/testfile.txt`
 	}
+	if (Object.keys(files).includes(file)) {
+		fs.writeFile(files[file], JSON.stringify(content), err => {
+			if (err) {
+				Utils.errorMessage('Error writting in' + files[file])
+				return(false)
+			}
+			else {
+				console.log('Success wrote in' + files[file])
+			}
+		})
+		return(true)
+	}
+	else {
+		console.log(`Error find file. Try with one of thoses : ${Object.keys(files)}`)
+		return(false)
+	}
+}
+
+function save() {
+	test = true
+	//lg.players = Utils.removeDuplicates(lg.players)
+	fs.writeFile(rootLgPath, JSON.stringify(lg), err => {
+		if (err) {
+			Utils.errorMessage('Error writting in' + rootLgPath)
+			return(false)
+		}
+		else {
+			console.log('Success wrote in' + rootLgPath)
+		}
+	})
+	return (true)
 }

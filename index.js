@@ -38,9 +38,7 @@ bot.on('message', msg => {
 			else if (RegExp(`^.{${pre.bot.length}}help`).test(msg.content)) Help.sendFirstMessage(msg.channel)
 		}
 		else if (RegExp('test').test(msg.content)) {
-			//var path = require('path')
-			
-			console.log(bot_inf)
+			console.log(Utils.save({MDR:"j'aime les trains"}, 'test'))
 		}
 	}
 })

@@ -5,10 +5,14 @@ const Discord = require('discord.js')
 const Utils = require('./srcs/js/utils.js')
 const Help = require('./srcs/js/help.js')
 const Role = require('./srcs/js/role.js')
+const emb = require('./srcs/json/embed.json')
 
 // Bot
 const bot = new Discord.Client()
 const bot_inf = require('./srcs/json/bot.json')
+
+// Global variable
+pages = []
 
 bot.login(bot_inf.login)
 
@@ -30,14 +34,7 @@ bot.on('message', msg => {
 			else if (RegExp(`^.{${bot_inf.pre.bot.length}}help`).test(msg.content)) Help.sendFirstMessage(msg.channel)
 		}
 		else if (RegExp('test').test(msg.content)) {
-			let pages = []
-			let i = 0
-			Object.keys(bot_inf.pre).forEach(function(z) {
-				pages[i] = {[z]: `${i}⃣`}
-				i += 1
-			})
-			msg.channel.send(pages)
-			console.log(pages)
+			console.log(Object.keys(emb.help))
 		}
 	}
 })
@@ -55,11 +52,23 @@ bot.on('messageReactionAdd', async (reaction, user) => {
 			}
 		}
 		//console.log(reaction.message.reactions.cache)
-		if (reaction.users.cache.find(elem => elem != bot_id)) {
-			if (reaction.emoji.name == '1⃣') Utils.edithelp(reaction, 1)
+		if (reaction.users.cache.find(elem => elem != bot_inf.id)) {			
+			for (let elem of pages) {
+				if (Object.values(elem).find(element => element == reaction.emoji.name)) Help.edithelp(reaction, elem)
+			}
+			
+			
+			/*page.forEach(element => {
+				for (let [key, value] of Object.entries(element)) {
+					console.log(`${key}: ${value}`)
+				}
+			});*/
+			
+
+			/*if (reaction.emoji.name == '1⃣') Utils.edithelp(reaction, 1)
 			else if (reaction.emoji.name == '2⃣') Utils.edithelp(reaction, 2)
 			else if (reaction.emoji.name == '3⃣') Utils.edithelp(reaction, 3)
-			else if (reaction.emoji.name == '0⃣') Utils.edithelp(reaction, 0)
+			else if (reaction.emoji.name == '0⃣') Utils.edithelp(reaction, 0)*/
 			//reaction.message.edit('', {embed:texts.help[1]})
 		}
 		//console.log(reaction)

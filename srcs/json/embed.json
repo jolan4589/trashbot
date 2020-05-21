@@ -19,8 +19,8 @@
             "icon_url": "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
         }
 	},
-	"help": [
-		{
+	"help": {
+		"bot": {
 			"color": 16711686,
 			"title": "__***jdr-bot help menu***__",
 			"author": {
@@ -34,36 +34,12 @@
 					"value": "1 - Global commands\n2 - Lg commands\n3 - Jdr-zeub commands"
 				},
 				{
-					"name": "\u200B",
-					"value": "[author gitHub](https://github.com/jolan4589)"
-				}
-			],
-			"timestamp": "2020-04-12T19:08:07",
-			"footer": {
-				"text": "JDR bot developped by jolan4589",
-				"icon_url": "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
-			}
-		},
-		{
-			"color": 16711686,
-			"title": "__***jdr-bot help menu***__",
-			"author": {
-				"name": "Ald4nia",
-				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
-			},
-			"description": "Global comands",
-			"fields": [
-				{
-					"name": "Somary",
-					"value": "0 - Somary\n2 - Lg commands\n3 - Jdr-zeub commands"
-				},
-				{
 					"name": "Bot description",
-					"value": "This bot was crated for fun, he's oriented rpg especialy lg.\n\nReplace [...] by following instruction, dont write [] but respect containing syntax."
+					"value": "This bot was crated for fun, he's oriented rpg especialy lg.\n\nReplace [...] by following instruction, dont write [] but respect contained syntax."
 				},
 				{
 					"name": "Comands list",
-					"value": "- %help >> Display bot help tool.\n- %ping >> Ping request for test bot.\n- %[n]d[x] >> Roll n in range [1,x]."
+					"value": "- {%}help >> Display bot help tool.\n- {%}ping >> Ping request for test bot.\n- {%}[n]d[x] >> Roll n in range [1,x]."
 				},
 				{
 					"name": "\u200B",
@@ -72,11 +48,11 @@
 			],
 			"timestamp": "2020-04-12T19:08:07",
 			"footer": {
-				"text": "JDR bot developped by jolan4589",
+				"text": "JDR bot developped by [jolan4589](https://github.com/jolan4589)",
 				"icon_url": "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
 			}
 		},
-		{
+		"lg": {
 			"color": 16711686,
 			"title": "__***jdr-bot help menu***__",
 			"author": {
@@ -91,7 +67,7 @@
 				},
 				{
 					"name": "__***Intro***__",
-					"value": "Every lg commands use \"%lg\" as prefix.\n- Replace [...] by the contained instruction, [argument ...] mean you can use this command with multiple arguments.\n- Be carreful, respecte spaces and quoting, \\ mean this command can work without argument."
+					"value": "Every lg commands use \"{%}{lg}\" as prefix.\n- Replace [...] by the contained instruction, [argument ...] mean you can use this command with multiple arguments.\n- Be carreful, respecte spaces and quoting, \\ mean this command can work without argument."
 				},
 				{
 					"name": "__***Game Commands***__",
@@ -116,7 +92,39 @@
 				"icon_url": "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
 			}
 		},
-		{
+		"role": {
+			"color": 16711686,
+			"title": "__***jdr-bot help menu***__",
+			"author": {
+				"name": "Ald4nia",
+				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
+			},
+			"description": "Role comands",
+			"fields": [
+				{
+					"name": "Somary",
+					"value": "0 - Somary\n1 - Global commands\n2 - Lg commands"
+				},
+				{
+					"name": "Intro",
+					"value": "Every role comands use {%}r as prefix."
+				},
+				{
+					"name": "Comands list",
+					"value": "- list >> Send in this channel the role list of the serveur.\n- send [$Role$ ...] message >> send the each role owner the message specified.\n"
+				},
+				{
+					"name": "\u200B",
+					"value": "[author gitHub](https://github.com/jolan4589)"
+				}
+			],
+			"timestamp": "2020-04-12T19:08:07",
+			"footer": {
+				"text": "JDR bot developped by jolan4589",
+				"icon_url": "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
+			}
+		},
+		"zeub": {
 			"color": 16711686,
 			"title": "__***jdr-bot help menu***__",
 			"author": {
@@ -131,7 +139,7 @@
 				},
 				{
 					"name": "Intro",
-					"value": "Every jdr-zeub comands use %zeub as prefix."
+					"value": "Every jdr-zeub comands use {%}{z} as prefix."
 				},
 				{
 					"name": "Comands list",
@@ -148,5 +156,5 @@
 				"icon_url": "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
 			}
 		}
-	]
+	}
 }

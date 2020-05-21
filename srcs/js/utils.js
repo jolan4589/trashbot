@@ -19,13 +19,6 @@ exports.removeDuplicates = function (a) {
 	});
 }
 
-exports.edithelp = function (reaction, i) {
-	emots = ['0⃣', '1⃣', '2⃣', '3⃣']
-	reaction.message.react(emots.find(element => !reaction.message.reactions.cache.find(elem => element == elem.emoji.name)))
-	reaction.message.reactions.cache.find(element => element.emoji.name == emots[i]).remove()
-	reaction.message.edit('', { embed: texts.help[i] })
-}
-
 exports.test = function (msg) {
 	msg.channel.send('coucou')
 }

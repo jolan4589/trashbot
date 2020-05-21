@@ -2,7 +2,6 @@ const emb = require('../json/embed.json')
 
 exports.sendRoleList = function (msg) {
 	tmp = emb.r
-	tmp
 	tmp.fields[0].value = ""
 	msg.guild.roles.cache.forEach(function (z) {
 		tmp.fields[0].value += z.name + '\n'
@@ -34,11 +33,8 @@ exports.sendToRoleOwners = function (msg) {
 			continu = false
 		}
 	}
-	console.log(msg.guild.roles.cache)
-	console.log(roles)
 	if (msg.guild.roles.cache.find(elem => roles.includes(elem.name))) {
 		let message = msg.content.slice(i).trim()
-		console.log(message)
 		msg.guild.members.cache.forEach(function (z) {
 			if (z.roles.cache.find(elem => roles.includes(elem.name))) {
 				z.send(message)

@@ -1,15 +1,18 @@
 fs = require('fs')
 
+// Root path
+global.ROOT = require('path').resolve(__dirname)
+
 // Requires
 const Discord = require('discord.js')
-const Utils = require('./srcs/js/utils.js')
-const Help = require('./srcs/js/help.js')
-const Role = require('./srcs/js/role.js')
-const emb = require('./srcs/json/embed.json')
+const Utils = require(`${ROOT}/srcs/js/utils.js`)
+const Help = require(`${ROOT}/srcs/js/help.js`)
+const Role = require(`${ROOT}/srcs/js/role.js`)
+const emb = require(`${ROOT}/srcs/json/embed.json`)
 
 // Bot
 const bot = new Discord.Client()
-const bot_inf = require('./srcs/json/bot.json')
+const bot_inf = require(`${ROOT}/srcs/json/bot.json`)
 
 // Global variable
 pages = []
@@ -21,20 +24,23 @@ bot.on('ready', () => {
 })
 
 bot.on('message', msg => {
+	let pre = Object.keys(bot_inf.pre).includes(msg.guild.id) ? bot_inf.pre[msg.guild.id]: bot_inf.pre.base
 	if (msg.author.id != bot_inf.id) {
-		if (RegExp('^' + bot_inf.pre.bot).test(msg.content)) {
+		if (RegExp(`^${pre.bot}`).test(msg.content)) {
 			// Role
-			if (RegExp(`^.{${bot_inf.pre.bot.length}}${bot_inf.pre.role}list$`).test(msg.content)) Role.sendRoleList(msg)
-			else if (RegExp(`^.{${bot_inf.pre.bot.length}}${bot_inf.pre.role}send`).test(msg.content)) Role.sendToRoleOwners(msg)
+			if (RegExp(`^.{${pre.bot.length}}${pre.role}list$`).test(msg.content)) Role.sendRoleList(msg)
+			else if (RegExp(`^.{${pre.bot.length}}${pre.role}send`).test(msg.content)) Role.sendToRoleOwners(msg)
 
 			// Other
 				// Profile picture
-			else if (RegExp(`^.{${bot_inf.pre.bot.length}}pp$`).test(msg.content)) msg.channel.send(msg.author.displayAvatarURL())
+			else if (RegExp(`^.{${pre.bot.length}}pp$`).test(msg.content)) msg.channel.send(msg.author.displayAvatarURL())
 				// Help
-			else if (RegExp(`^.{${bot_inf.pre.bot.length}}help`).test(msg.content)) Help.sendFirstMessage(msg.channel)
+			else if (RegExp(`^.{${pre.bot.length}}help`).test(msg.content)) Help.sendFirstMessage(msg.channel)
 		}
 		else if (RegExp('test').test(msg.content)) {
-			console.log(Object.keys(emb.help))
+			//var path = require('path')
+			
+			console.log(bot_inf)
 		}
 	}
 })

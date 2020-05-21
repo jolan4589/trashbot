@@ -1,4 +1,4 @@
-const emb = require('../json/embed.json')
+const emb = require(`${ROOT}/json/embed.json`)
 
 exports.sendRoleList = function (msg) {
 	tmp = emb.r

@@ -4,7 +4,7 @@
  * @param {int} max 
  */
 exports.getRandomInt = function (max) {
-	return Math.floor(1 + Math.random() * Math.floor(max));
+	return Math.floor(1 + Math.random() * Math.floor(max))
 }
 
 /**
@@ -21,4 +21,11 @@ exports.removeDuplicates = function (a) {
 
 exports.test = function (msg) {
 	msg.channel.send('coucou')
+}
+
+
+exports.save = function(content, file) {
+	const files = {
+		bot: "b"
+	}
 }

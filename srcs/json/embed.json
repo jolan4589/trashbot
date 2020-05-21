@@ -30,7 +30,7 @@
 			"description": "Sommary page",
 			"fields": [
 				{
-					"name": "Somary",
+					"name": "__***Summary***__",
 					"value": "1 - Global commands\n2 - Lg commands\n3 - Jdr-zeub commands"
 				},
 				{
@@ -62,8 +62,8 @@
 			"description": "Lg commands",
 			"fields": [
 				{
-					"name": "__***Somary***__",
-					"value": "0 - Somary\n1 - Global comands\n3 - Jdr-zeub commands"
+					"name": "__***Summary***__",
+					"value": "0 - Summary\n1 - Global comands\n3 - Jdr-zeub commands"
 				},
 				{
 					"name": "__***Intro***__",
@@ -102,8 +102,8 @@
 			"description": "Role comands",
 			"fields": [
 				{
-					"name": "Somary",
-					"value": "0 - Somary\n1 - Global commands\n2 - Lg commands"
+					"name": "__***Summary***__",
+					"value": "0 - Summary\n1 - Global commands\n2 - Lg commands"
 				},
 				{
 					"name": "Intro",
@@ -134,8 +134,8 @@
 			"description": "Jdr_zeub comands",
 			"fields": [
 				{
-					"name": "Somary",
-					"value": "0 - Somary\n1 - Global commands\n2 - Lg commands"
+					"name": "__***Summary***__",
+					"value": "0 - Summary\n1 - Global commands\n2 - Lg commands"
 				},
 				{
 					"name": "Intro",

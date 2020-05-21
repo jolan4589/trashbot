@@ -1,10 +1,13 @@
 {
 	"login": "NjkxNjY1Mzg0NDUzMTc3Mzg1.XntoAQ.XDaVq_l0DAj2RRJkXEoAiyUGPdM",
 	"pre": {
-		"bot": "%",
-		"role": "r",
-		"lg": "lg",
-		"zeub": "z"
+		"base": {
+			"bot": "%",
+			"role": "r",
+			"lg": "lg",
+			"zeub": "z",
+			"jrpg": "rp"
+		}
 	},
 	"id" : 691665384453177385
 }

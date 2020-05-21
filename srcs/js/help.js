@@ -1,5 +1,5 @@
-const bot_inf = require('../json/bot.json')
-const emb = require('../json/embed.json')
+const bot_inf = require(`${ROOT}/srcs/json/bot.json`)
+const emb = require(`${ROOT}/srcs/json/embed.json`)
 
 exports.sendFirstMessage = function (chan) {
 	pages = []
@@ -9,7 +9,8 @@ exports.sendFirstMessage = function (chan) {
 		i++
 		i = i % 10
 	})
-	console.log(pages)
+	emb.help.bot.fields.find(elem => RegExp('summary', 'i').test(elem.name))
+
 	chan.send({ embed: emb.help.bot })
 		.then(message => {
 			pages.forEach(elem => Object.keys(elem)[0] == 'bot' ?

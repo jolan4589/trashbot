@@ -27,11 +27,11 @@
 				"name": "Ald4nia",
 				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
 			},
-			"description": "Sommary page",
+			"description": "Global bot help",
 			"fields": [
 				{
 					"name": "__***Summary***__",
-					"value": "1 - Global commands\n2 - Lg commands\n3 - Jdr-zeub commands"
+					"value": ""
 				},
 				{
 					"name": "Bot description",
@@ -59,11 +59,11 @@
 				"name": "Ald4nia",
 				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
 			},
-			"description": "Lg commands",
+			"description": "Lg help",
 			"fields": [
 				{
 					"name": "__***Summary***__",
-					"value": "0 - Summary\n1 - Global comands\n3 - Jdr-zeub commands"
+					"value": ""
 				},
 				{
 					"name": "__***Intro***__",
@@ -99,11 +99,11 @@
 				"name": "Ald4nia",
 				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
 			},
-			"description": "Role comands",
+			"description": "Role help",
 			"fields": [
 				{
 					"name": "__***Summary***__",
-					"value": "0 - Summary\n1 - Global commands\n2 - Lg commands"
+					"value": ""
 				},
 				{
 					"name": "Intro",
@@ -131,11 +131,11 @@
 				"name": "Ald4nia",
 				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
 			},
-			"description": "Jdr_zeub comands",
+			"description": "Jdr_zeub help",
 			"fields": [
 				{
 					"name": "__***Summary***__",
-					"value": "0 - Summary\n1 - Global commands\n2 - Lg commands"
+					"value": ""
 				},
 				{
 					"name": "Intro",

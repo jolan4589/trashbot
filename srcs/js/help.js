@@ -3,10 +3,10 @@ const emb = require(`${ROOT}/srcs/json/embed.json`)
 
 function fillPage(page) {
 	if (emb.help[page].fields[emb.help[page].fields.findIndex(elem => /summary/i.test(elem.name))].value == "") {
-		pages.forEach((elem, i)=> {
+		pages.forEach((elem)=> {
 			if (Object.keys(emb.help).includes(Object.keys(elem)[0])) {emb.help[page].fields[
 				emb.help[page].fields.findIndex(elem => /summary/i.test(elem.name))
-			].value += `${i} - ${Object.keys(elem)}\n` 
+			].value += `${Object.values(elem)} - ${Object.keys(elem)}\n` 
 		}})
 	}
 	let tab
@@ -17,6 +17,7 @@ function fillPage(page) {
 			})
 		}		
 	})
+	emb.help[page].title = emb.help[page].title.replace('{botn}', pre.botn)
 }
 
 exports.sendFirstMessage = function (chan, page = 'bot') {

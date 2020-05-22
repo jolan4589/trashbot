@@ -1,7 +1,7 @@
 {
 	"r": {
         "color": 16711686,
-        "title": "__***Liste des rôles du serveur***__",
+        "title": "__**Liste des rôles du serveur**__",
         "author": {
             "name": "Ald4nia",
             "icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
@@ -22,7 +22,7 @@
 	"help": {
 		"bot": {
 			"color": 16711686,
-			"title": "__***jdr-bot help menu***__",
+			"title": "__**Bot : `{botn}` help menu**__",
 			"author": {
 				"name": "Ald4nia",
 				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
@@ -30,7 +30,7 @@
 			"description": "Global bot help",
 			"fields": [
 				{
-					"name": "__***Summary***__",
+					"name": "__**Summary**__",
 					"value": ""
 				},
 				{
@@ -39,7 +39,7 @@
 				},
 				{
 					"name": "Comands list",
-					"value": "- `{bot}help` >> Display bot help tool.\n- `{bot}ping` >> Ping request for test bot.\n- `{bot}[n]d[x]` >> Roll n in range [1,x]."
+					"value": "- `{bot}help` >> Display bot help tool.\n- `{bot}ping` >> Ping request for test bot.\n- `{bot}[n]d[x]` >> Roll n in range [1,x].\n- `{bot}pp` >> Send your profile picture.\n- `{bot}{botn}[\\{lg}, {role}, {zeub}, {jrpg}] newPrefix` >> will change specifed bot prefix (main one defaultly)"
 				},
 				{
 					"name": "\u200B",
@@ -54,7 +54,7 @@
 		},
 		"lg": {
 			"color": 16711686,
-			"title": "__***jdr-bot help menu***__",
+			"title": "__**Bot : `{botn}` help menu**__",
 			"author": {
 				"name": "Ald4nia",
 				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
@@ -62,23 +62,23 @@
 			"description": "Lg help",
 			"fields": [
 				{
-					"name": "__***Summary***__",
+					"name": "__**Summary**__",
 					"value": ""
 				},
 				{
-					"name": "__***Intro***__",
+					"name": "__**Intro**__",
 					"value": "Every lg commands use `{bot}{lg}` as prefix.\n- Replace `[...]` by the contained instruction, [argument ...] mean you can use this command with multiple arguments.\n- Be carreful, respecte spaces and quoting, `\\` mean this command can work without argument."
 				},
 				{
-					"name": "__***Game Commands***__",
+					"name": "__**Game Commands**__",
 					"value": "- `{bot}{lg}start[\\n]` >> Lunch the game with n cards (1 without n).\n- `{bot}{lg}end` >> End current game.\n- `{bot}{lg}vote` >> Show vote options.\n- `{bot}{lg}kill [@player]` >> Substract 1 to mentionned player hp counter\n"
 				},
 				{
-					"name": "__***Player Commands***__",
+					"name": "__**Player Commands**__",
 					"value": "- `{bot}{lg}padd [@player ...]` >> Add to current player list following players.\n- `{bot}{lg}pset [@player ...]` >> Erease current list and replace it by following players.\n- `{bot}{lg}plist` >> Bot send in this channel players list.\n- `{bot}{lg}pclear` >> Reset current players list.\n- `{bot}{lg}patt[n]` >> Attribute role, without start game, and send to each players his own one.\n- `{bot}{lg}plifeset[n]` >> Set all players life to n.\n"
 				},
 				{
-					"name": "__***Cards Commands***__",
+					"name": "__**Cards Commands**__",
 					"value": "- `{bot}{lg}cclear[n]` >> Reset nth cards list.\n- `{bot}{lg}cset[n] [\"card name\", ...]` >> Set nth cards list with following cards.\n- `{bot}{lg}cadd[n] [\"card name\", ...]` >> Add to nth cards list following cards.\n"
 				},
 				{
@@ -94,7 +94,7 @@
 		},
 		"role": {
 			"color": 16711686,
-			"title": "__***jdr-bot help menu***__",
+			"title": "__**Bot : `{botn}` help menu**__",
 			"author": {
 				"name": "Ald4nia",
 				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
@@ -102,7 +102,7 @@
 			"description": "Role help",
 			"fields": [
 				{
-					"name": "__***Summary***__",
+					"name": "__**Summary**__",
 					"value": ""
 				},
 				{
@@ -126,7 +126,7 @@
 		},
 		"zeub": {
 			"color": 16711686,
-			"title": "__***jdr-bot help menu***__",
+			"title": "__**Bot : `{botn}` help menu**__",
 			"author": {
 				"name": "Ald4nia",
 				"icon_url": "https://cdn.discordapp.com/avatars/227765280858701824/a3397d39a514e28e48cae81749430c16.webp"
@@ -134,7 +134,7 @@
 			"description": "Jdr_zeub help",
 			"fields": [
 				{
-					"name": "__***Summary***__",
+					"name": "__**Summary**__",
 					"value": ""
 				},
 				{

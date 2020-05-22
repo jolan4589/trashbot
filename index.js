@@ -59,7 +59,7 @@ bot.on('message', msg => {
 })
 
 bot.on('messageReactionAdd', async (reaction, user) => {
-	pre = Object.keys(bot_inf.pre).includes(reaction.client.guild.id) ? bot_inf.pre[reaction.client.guild.id] : bot_inf.pre.base
+	pre = Object.keys(bot_inf.pre).includes(reaction.message.guild.id) ? bot_inf.pre[reaction.msg.guild.id] : bot_inf.pre.base
 	pre.botn = bot_inf.botname
 	// When we receive a reaction we check if the reaction is partial or not
 	if (reaction.partial) {

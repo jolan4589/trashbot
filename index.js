@@ -38,10 +38,48 @@ bot.on('message', msg => {
 			else if (RegExp(`^.{${pre.bot.length}}help`).test(msg.content)) Help.sendFirstMessage(msg.channel)
 		}
 		else if (RegExp('test').test(msg.content)) {
-			Help.sendFirstMessage(msg.channel, 'bot')
-			Help.sendFirstMessage(msg.channel, 'zeub')
-			Help.sendFirstMessage(msg.channel, 'role')
-			Help.sendFirstMessage(msg.channel, 'lg')
+			console.log('====================\nNew test\n====================')
+			page = ['zeub','lg','bot','role']
+			let tab
+			emb.help[page[0]].fields.map(elem => {
+				if (tab = elem.value.match(/{.{0,4}}/g)) {
+					tab.forEach(element => {
+						elem.value = elem.value.replace(element, `${pre[element.slice(1, element.length - 1)]}`)
+					})
+				}		
+			})
+
+			emb.help[page[1]].fields.map(elem => {
+				if (tab = elem.value.match(/{.{0,4}}/g)) {
+					tab.forEach(element => {
+						elem.value = elem.value.replace(element, `${pre[element.slice(1, element.length - 1)]}`)
+					})
+				}		
+			})
+
+			emb.help[page[2]].fields.map(elem => {
+				if (tab = elem.value.match(/{.{0,4}}/g)) {
+					tab.forEach(element => {
+						elem.value = elem.value.replace(element, `${pre[element.slice(1, element.length - 1)]}`)
+					})
+				}		
+			})
+
+			emb.help[page[3]].fields.map(elem => {
+				if (tab = elem.value.match(/{.{0,4}}/g)) {
+					tab.forEach(element => {
+						elem.value = elem.value.replace(element, `${pre[element.slice(1, element.length - 1)]}`)
+					})
+				}		
+			})
+			page.forEach(elem => emb.help[elem].fields[0].value = "OUI")
+			//msg.channel.send({embed : emb.help[page[0]]})
+
+			msg.channel.send({ embed: emb.help[page[0]] })
+			msg.channel.send({ embed: emb.help[page[1]] })
+			msg.channel.send({ embed: emb.help[page[2]] })
+			msg.channel.send({ embed: emb.help[page[3]] })
+			//console.log(msg.content)
 		}
 	}
 })

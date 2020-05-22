@@ -1,7 +1,7 @@
 const bot_inf = require(`${ROOT}/srcs/json/bot.json`)
 const emb = require(`${ROOT}/srcs/json/embed.json`)
 
-function fillSummary(page) {
+function fillPage(page) {
 	if (emb.help[page].fields[emb.help[page].fields.findIndex(elem => /summary/i.test(elem.name))].value == "") {
 		pages.forEach((elem, i)=> {
 			if (Object.keys(emb.help).includes(Object.keys(elem)[0])) {emb.help[page].fields[
@@ -9,6 +9,14 @@ function fillSummary(page) {
 			].value += `${i} - ${Object.keys(elem)}\n` 
 		}})
 	}
+	let tab
+	emb.help[page].fields.map(elem => {
+		if (tab = elem.value.match(/{.{0,4}}/g)) {
+			tab.forEach(element => {
+				elem.value = elem.value.replace(element, `${pre[element.slice(1, element.length - 1)]}`)
+			})
+		}		
+	})
 }
 
 exports.sendFirstMessage = function (chan, page = 'bot') {
@@ -25,7 +33,7 @@ exports.sendFirstMessage = function (chan, page = 'bot') {
 		return (0)
 	}
 
-	fillSummary(page)
+	fillPage(page)
 
 	chan.send({ embed: emb.help[page] })
 		.then(message => {
@@ -44,6 +52,6 @@ exports.sendFirstMessage = function (chan, page = 'bot') {
 exports.edithelp = function (reaction, elem) {
 	reaction.message.react(Object.values(pages.find(element => !reaction.message.reactions.cache.find(elem => Object.values(element)[0] == elem.emoji.name)))[0])
 	reaction.message.reactions.cache.find(element => element.emoji.name == Object.values(elem)[0]).remove()
-	fillSummary(Object.keys(elem)[0])
+	fillPage(Object.keys(elem)[0])
 	reaction.message.edit('', { embed: emb.help[Object.keys(elem)] })
 }

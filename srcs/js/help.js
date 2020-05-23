@@ -35,7 +35,7 @@ exports.sendFirstMessage = function (chan, page = 'bot') {
 	}
 
 	fillPage(page)
-
+	
 	chan.send({ embed: emb.help[page] })
 		.then(message => {
 			pages.forEach(elem => Object.keys(elem)[0] == page ?

@@ -1,3 +1,5 @@
+const bot_inf = require(`${ROOT}/srcs/json/bot.json`)
+
 /**
  * Function :
  * 	This function return an int between 1 and max include.
@@ -23,7 +25,23 @@ exports.test = function (msg) {
 	msg.channel.send('coucou')
 }
 
-exports.save = function(content, file) {
+exports.embMessage = function (title, value) {
+	return (
+		{
+			embed: {
+				color: 8913151,
+				footer: {
+					text: `${bot_inf.botname} bot developped by jolan4589`,
+					icon_url: "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
+				},
+				title: `__**${title} :**__`,
+				description: `${value}`
+			}
+		}
+	)
+}
+
+exports.save = function (content, file) {
 	const files = {
 		bot: `${ROOT}/srcs/json/bot.json`,
 		embed: `${ROOT}/srcs/json/embed.json`,
@@ -34,16 +52,16 @@ exports.save = function(content, file) {
 		fs.writeFile(files[file], JSON.stringify(content), err => {
 			if (err) {
 				Utils.errorMessage('Error writting in' + files[file])
-				return(false)
+				return (false)
 			}
 			else {
 				console.log('Success wrote in' + files[file])
 			}
 		})
-		return(true)
+		return (true)
 	}
 	else {
 		console.log(`Error find file. Try with one of thoses : ${Object.keys(files)}`)
-		return(false)
+		return (false)
 	}
 }

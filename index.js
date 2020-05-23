@@ -41,7 +41,7 @@ bot.on('message', msg => {
 			}
 			// Jrpg
 			else if (RegExp(`^${pre.bot}${pre.jrpg}`).test(msg.content)) {
-				if (RegExp(`^${pre.bot}${pre.jrpg} start$`, 'i')) Rpg.startGame(msg)
+				if (RegExp(`^${pre.bot}${pre.jrpg} start$`, 'i').test(msg.content)) Rpg.startGame(msg)
 				else if (msg.content.length == pre.bot.length + pre.jrpg.length) Help.sendFirstMessage(msg.channel, 'jrpg')
 			}
 			// Jdr zeub
@@ -65,21 +65,7 @@ bot.on('message', msg => {
 		else if (RegExp('rpgtst').test(msg.content)) {
 			console.log('====================\nNew rpgtst\n====================')
 
-			msg.channel.send({
-				embed: {
-					color: 8737463,
-					footer: {
-						text: "JDR bot developped by jolan4589",
-						icon_url: "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
-					},
-				  	fields: [
-						{
-							name: "__Information__",
-							value: `Vous avez déjà une partie en cours sur ce serveur ${msg.member ? msg.member.nickname : msg.author.username}.`
-						}
-					]
-				}
-			})
+			msg.channel.send(Utils.embMessage('Information', 'bonjour le monde'))
 		}
 	}
 })

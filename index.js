@@ -8,6 +8,7 @@ const Discord = require('discord.js')
 const Utils = require(`${ROOT}/srcs/js/utils.js`)
 const Help = require(`${ROOT}/srcs/js/help.js`)
 const Role = require(`${ROOT}/srcs/js/role.js`)
+const Rpg = require(`${ROOT}/srcs/js/rpg.js`)
 const emb = require(`${ROOT}/srcs/json/embed.json`)
 
 // Bot
@@ -24,7 +25,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', msg => {
-	pre = Object.keys(bot_inf.pre).includes(msg.guild.id) ? bot_inf.pre[msg.guild.id] : bot_inf.pre.base
+	pre = msg.guild && Object.keys(bot_inf.pre).includes(msg.guild.id) ? bot_inf.pre[msg.guild.id] : bot_inf.pre.base
 	pre.botn = bot_inf.botname
 	if (msg.author.id != bot_inf.id) {
 		if (RegExp(`^${pre.bot}`).test(msg.content)) {
@@ -40,7 +41,8 @@ bot.on('message', msg => {
 			}
 			// Jrpg
 			else if (RegExp(`^${pre.bot}${pre.jrpg}`).test(msg.content)) {
-				if (msg.content.length == pre.bot.length + pre.jrpg.length) Help.sendFirstMessage(msg.channel, 'jrpg')
+				if (RegExp(`^${pre.bot}${pre.jrpg} start$`, 'i')) Rpg.startGame(msg)
+				else if (msg.content.length == pre.bot.length + pre.jrpg.length) Help.sendFirstMessage(msg.channel, 'jrpg')
 			}
 			// Jdr zeub
 			else if (RegExp(`^${pre.bot}${pre.zeub}`).test(msg.content)) {
@@ -62,12 +64,22 @@ bot.on('message', msg => {
 		}
 		else if (RegExp('rpgtst').test(msg.content)) {
 			console.log('====================\nNew rpgtst\n====================')
-			if(msg.content == 'rpgtst') {
-				let blop = {}
-				blop[`${msg.guild.id}`] = {jolantmp: 12}
-				console.log(blop)
-				Utils.save(blop, 'rpg')
-			}
+
+			msg.channel.send({
+				embed: {
+					color: 8737463,
+					footer: {
+						text: "JDR bot developped by jolan4589",
+						icon_url: "https://cdn.discordapp.com/avatars/691665384453177385/04abc2348c9b22ef57463bcfbf37d059.webp"
+					},
+				  	fields: [
+						{
+							name: "__Information__",
+							value: `Vous avez déjà une partie en cours sur ce serveur ${msg.member ? msg.member.nickname : msg.author.username}.`
+						}
+					]
+				}
+			})
 		}
 	}
 })
@@ -90,6 +102,6 @@ bot.on('messageReactionAdd', async (reaction, user) => {
 	if (reaction.users.cache.find(elem => elem != bot_inf.id)) {
 		for (let elem of pages) {
 			if (Object.values(elem).find(element => element == reaction.emoji.name)) Help.edithelp(reaction, elem)
-		}	
+		}
 	}
 })

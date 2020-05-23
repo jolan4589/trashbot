@@ -23,7 +23,6 @@ exports.test = function (msg) {
 	msg.channel.send('coucou')
 }
 
-
 exports.save = function(content, file) {
 	const files = {
 		bot: `${ROOT}/srcs/json/bot.json`,

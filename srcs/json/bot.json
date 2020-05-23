@@ -3,9 +3,9 @@
 	"pre": {
 		"base": {
 			"bot": "%",
-			"role": "r",
+			"role": "rl",
 			"lg": "lg",
-			"zeub": "z",
+			"zeub": "zb",
 			"jrpg": "rp"
 		}
 	},

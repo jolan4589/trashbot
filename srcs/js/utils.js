@@ -26,10 +26,10 @@ exports.test = function (msg) {
 
 exports.save = function(content, file) {
 	const files = {
-		bot: `${ROOT}/srcs/bot.json`,
-		embed: `${ROOT}/srcs/embed.json`,
+		bot: `${ROOT}/srcs/json/bot.json`,
+		embed: `${ROOT}/srcs/json/embed.json`,
 		test: `${ROOT}/testfile.txt`,
-		rpg: `${ROOT}/srcs/rpg.json`
+		rpg: `${ROOT}/srcs/json/rpg.json`
 	}
 	if (Object.keys(files).includes(file)) {
 		fs.writeFile(files[file], JSON.stringify(content), err => {

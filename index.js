@@ -53,7 +53,21 @@ bot.on('message', msg => {
 			else if (RegExp(`^.{${pre.bot.length}}help$`).test(msg.content)) Help.sendFirstMessage(msg.channel)
 		}
 		else if (RegExp('test').test(msg.content)) {
-			console.log('====================\nNew test\n====================')
+			/*console.log('====================\nNew test\n====================')
+			if(msg.content == 'testrpg') {
+				let blop
+				blop[`${msg.guild.id}`] = {}
+				Utils.save(blop, 'rpg')
+			}*/
+		}
+		else if (RegExp('rpgtst').test(msg.content)) {
+			console.log('====================\nNew rpgtst\n====================')
+			if(msg.content == 'rpgtst') {
+				let blop = {}
+				blop[`${msg.guild.id}`] = {jolantmp: 12}
+				console.log(blop)
+				Utils.save(blop, 'rpg')
+			}
 		}
 	}
 })

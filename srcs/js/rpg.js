@@ -15,3 +15,20 @@ exports.startGame = function(msg) {
 		if (!Utils.save(rpg, 'rpg')) return (0)
 	}
 }
+
+exports.saveRPG = function(playerData, rpgSave){
+	let servID = Object.keys(playerData)[0]
+	let playerID = Object.keys(playerData[servID])[0]
+	if (Object.keys(rpgSave).includes(servID)) {
+		if (Object.keys(rpgSave[servID]).includes(playerID)) {
+			rpgSave[servID][playerID] = playerData[servID][playerID]
+		}
+		else {
+			rpgSave[servID] = Object.assign(rpgSave[servID], playerData[servID])
+		}
+	}
+	else {
+		rpgSave = Object.assign(rpgSave, playerData)
+	}
+	return rpgSave
+}

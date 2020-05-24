@@ -49,44 +49,16 @@ exports.save = function (content, file) {
 		rpg: `${ROOT}/srcs/json/rpg.json`
 	}
 	if (Object.keys(files).includes(file)) {
-		if (file == 'rpg'){
-			let rpg = require(`${ROOT}/srcs/json/rpg.json`)
-			let servID = Object.keys(content)[0]
-			let playerID = Object.keys(content[servID])[0]
-			if (Object.keys(rpg).includes(servID)){
-				if (Object.keys(rpg[servID]).includes(playerID)){
-					rpg[servID][playerID] = content[servID][playerID]
-				}
-				else {
-					rpg[servID] = Object.assign(rpg[servID], content[servID])
-				}
+		fs.writeFile(files[file], JSON.stringify(content, null, 4), err => {
+			if (err) {
+				Utils.errorMessage('Error writting in' + files[file])
+				return(false)
 			}
 			else {
-				rpg = Object.assign(rpg, content)
+				console.log('Success wrote in' + files[file])
 			}
-			fs.writeFile(files[file], JSON.stringify(rpg, null, 4), err => {
-				if (err) {
-					Utils.errorMessage('Error writting in ' + files[file])
-					return false
-				}
-				else {
-					console.log('Success wrote in ' + files[file])
-				}
-			})
-			return true
-		}
-		else {
-			fs.writeFile(files[file], JSON.stringify(content), err => {
-				if (err) {
-					Utils.errorMessage('Error writting in' + files[file])
-					return(false)
-				}
-				else {
-					console.log('Success wrote in' + files[file])
-				}
-			})
-			return(true)
-		}
+		})
+		return(true)
 	}
 	else {
 		console.log(`Error find file. Try with one of thoses : ${Object.keys(files)}`)

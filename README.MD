@@ -1,4 +1,5 @@
 ### Code by Riallot Jolan
+The id in scrs/json/bot.json is a exemple
 
 # Trash bot
 
